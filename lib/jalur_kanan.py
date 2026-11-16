@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import manuver as m
+from lib import manuver as m
 
 TINGGI_MAZE = 1.3
 BATAS_TINGGI_DINDING = 1.96
@@ -64,7 +64,7 @@ def jalur_kanan(d):
 
 
 if __name__ == '__main__':
-    from drone import buat_drone
+    from lib.drone import buat_drone
     d = buat_drone()
     try:
         d.takeoff(TINGGI_MAZE)

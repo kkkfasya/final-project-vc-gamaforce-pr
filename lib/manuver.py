@@ -2,8 +2,8 @@
 import math
 from collections import Counter
 
-import vision
-from drone import DT, batasi, sekarang
+from lib import vision
+from lib.drone import DT, batasi, sekarang
 
 TENGAH_U = 320
 TENGAH_V = 240

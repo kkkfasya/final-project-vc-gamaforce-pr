@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-import vision
-import manuver as m
-from drone import DT, batasi, sekarang
+from lib import vision
+from lib import manuver as m
+from lib.drone import DT, batasi, sekarang
 
 TINGGI_RING = 2.6
 WARNA_TARGET = {1: 'bullseye1', 2: 'bullseye2', 3: 'bullseye3'}

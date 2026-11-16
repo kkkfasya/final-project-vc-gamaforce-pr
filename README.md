@@ -8,10 +8,16 @@ Nggak ada koordinat arena di kode. Drone gerak pakai perintah kecepatan lewat MA
 
 ## Isi folder
 
-| File | Isi |
+```text
+.
+├── misi_kiri.py      misi penuh jalur kiri (yang dijalanin)
+├── misi_kanan.py     misi penuh jalur kanan (yang dijalanin)
+├── peta_arena.png
+└── lib/              kode pendukung
+```
+
+| File di `lib/` | Isi |
 |---|---|
-| `misi_kiri.py` | Misi penuh jalur kiri: takeoff, rintangan kiri, ring, bullseye |
-| `misi_kanan.py` | Misi penuh jalur kanan: takeoff, maze dan terowongan, ring, bullseye |
 | `jalur_kiri.py` | Rintangan jalur kiri aja (gerbang, pipa meliuk, lorong + ArUco, jendela) |
 | `jalur_kanan.py` | Rintangan jalur kanan aja (sekat, pilar, terowongan) |
 | `bagian_akhir.py` | Bagian yang dipakai dua jalur: lingkaran lantai, ring, kamikaze bullseye |
@@ -19,6 +25,16 @@ Nggak ada koordinat arena di kode. Drone gerak pakai perintah kecepatan lewat MA
 | `vision.py` | Deteksi warna, lubang, lingkaran, dan ArUco dari gambar kamera |
 | `drone.py` | Koneksi MAVROS, takeoff, perintah kecepatan, baca lidar dan kamera |
 | `tes_dasar.py` | Tes singkat: takeoff, gerak kotak, mendarat |
+
+Satu jalur aja (tanpa bagian akhir) atau tes dasar bisa dijalanin dari folder utama:
+
+```bash
+python3 -m lib.jalur_kiri
+```
+
+```bash
+python3 -m lib.tes_dasar
+```
 
 ## Cara jalanin
 
@@ -148,7 +164,7 @@ Tiap rintangan polanya sama: cari sampai keliatan di sensor, pasin posisi, lewat
 3. Geser sampai bullseye yang warnanya cocok ada di depan (1 biru di kiri, 2 oranye di tengah, 3 hijau kekuningan di kanan).
 4. Bidik pusatnya, lalu maju lurus 2 m/s sampai nabrak.
 
-### Deteksi di `vision.py`
+### Deteksi di `lib/vision.py`
 
 Cuma pakai fungsi OpenCV dari materi pelatihan oprec: `cvtColor`, `inRange`, `bitwise_or`, `morphologyEx`, `findContours`, `boundingRect`, ditambah `cv2.aruco` buat baca marker.
 
@@ -187,7 +203,7 @@ Jarak ke rintangan dari rekaman lintasan:
 
 ## Catatan
 
-- Rentang warna disetel dari warna di simulasi. Kalau warna atau pencahayaan arena berubah, `WARNA` di `vision.py` perlu disetel ulang.
+- Rentang warna disetel dari warna di simulasi. Kalau warna atau pencahayaan arena berubah, `WARNA` di `lib/vision.py` perlu disetel ulang.
 - Gerbang, pipa meliuk, dan jendela di jalur kiri nggak punya collision di world, jadi drone nggak ketahan kalau nyenggol. Jarak di atas diukur dari rekaman posisi.
 - Lingkaran hijau pertama (di bawah gerbang miring) posisinya sedikit di bawah lantai dan nggak keliatan kamera, jadi nggak dipakai.
 - Lidar tiap arah cuma satu sinar, jadi benda yang nggak pas di garis sinar nggak kebaca.

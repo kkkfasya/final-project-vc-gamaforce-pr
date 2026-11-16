@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from drone import buat_drone
+from lib.drone import buat_drone
 
 d = buat_drone()
 try:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import vision
-import manuver as m
+from lib import vision
+from lib import manuver as m
 
 TINGGI_GERBANG = 0.8
 TINGGI_PIPA = 2.2
@@ -66,7 +66,7 @@ def jalur_kiri(d):
 
 
 if __name__ == '__main__':
-    from drone import buat_drone
+    from lib.drone import buat_drone
     d = buat_drone()
     try:
         d.takeoff(TINGGI_GERBANG)

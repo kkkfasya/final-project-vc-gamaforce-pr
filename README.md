@@ -36,6 +36,32 @@ python3 -m lib.jalur_kiri
 python3 -m lib.tes_dasar
 ```
 
+## Download
+
+Kode di repo ini cuma misinya. Arena, model, dan drone ada di repo arena oprec Gamaforce, jadi butuh **dua repo**, masing-masing di-clone sendiri ke folder `~/oprec`:
+
+```text
+~/oprec/
+├── gazebo_sim/                    repo arena (dipakai T1 sampai T3)
+└── final-project-vc-gamaforce/    repo ini (dipakai T4)
+```
+
+**1. Repo arena**, ke `~/oprec/gazebo_sim`. Nama folder ini harus persis, karena semua perintah di README repo arena pakai path itu:
+
+```bash
+mkdir -p ~/oprec && cd ~/oprec && git clone https://github.com/YournormalGuy1/OPREC_Gamaforce.git gazebo_sim
+```
+
+Kalau repo arena udah ada di `~/oprec/gazebo_sim` dari pelatihan, langkah ini dilewatin.
+
+**2. Repo ini**, di sebelahnya:
+
+```bash
+cd ~/oprec && git clone https://github.com/mendoansambelkecap/final-project-vc-gamaforce.git
+```
+
+Misinya selalu dijalanin dari dalam folder repo ini (`cd ~/oprec/final-project-vc-gamaforce`), biar folder `lib/` kebaca.
+
 ## Cara jalanin
 
 Urutannya ngikutin README repo arena: tiga terminal buat simulasi (T1, T2, T3), ditambah satu terminal buat misi (T4). Repo arena diasumsikan ada di `~/oprec/gazebo_sim`, sama kayak di README-nya.
@@ -91,9 +117,10 @@ Harus muncul `/lidar_left`, `/lidar_right`, `/lidar_up`, `/lidar_down`, `/lidar_
 
 ### T4: Misi
 
-Dari folder ini, setelah T1 sampai T3 jalan semua:
+Setelah T1 sampai T3 jalan semua:
 
 ```bash
+cd ~/oprec/final-project-vc-gamaforce
 python3 misi_kiri.py
 ```
 

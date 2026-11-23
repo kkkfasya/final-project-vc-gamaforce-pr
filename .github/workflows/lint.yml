@@ -29,10 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # di bawah ini kita pin version nya sampai ke level commit hash
-      # agar benar-benar reproducible
-      # terkadang minor patch dapat mendatangkan unexpected bug/change karena software sekarang kebanyakan
-      # AI SLOPPP
+      # di bawah ini kita pin version nya sampai ke level commit hash agar benar-benar reproducible
+      # terkadang minor/patch change dapat mendatangkan unexpected bug/change
 
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

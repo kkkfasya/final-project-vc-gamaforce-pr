@@ -117,6 +117,14 @@ ros2 topic list | grep -E "lidar|camera"
 
 Harus muncul `/lidar_left`, `/lidar_right`, `/lidar_up`, `/lidar_down`, `/lidar_front`, `/lidar_back`, `/camera_front`, `/camera_down`.
 
+Bisa juga pakai `cek_sensor.sh` buat nampilin sensor yang kedeteksi sekaligus ngecek kalau semuanya ada:
+
+```bash
+./cek_sensor.sh
+```
+
+Kalau ada yang kurang, script ini nampilin topic yang hilang dan keluar dengan kode error 1.
+
 ### T4: Misi
 
 Setelah T1 sampai T3 jalan semua:

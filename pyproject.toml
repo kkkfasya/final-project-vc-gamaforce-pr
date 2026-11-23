@@ -1,3 +1,7 @@
+# file pyproject hanya untuk linter
+# dependency untuk ros dan mav diinstal via system, tidak digunakan via uv install 
+# dikarenakan terdapat edge case yang perlu dihandle, dan kami ingin instalasi sesuai standar prosedur oprec gamaforce
+
 [project]
 name = "final-project-vc-gamaforce"
 version = "0.1.0"

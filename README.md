@@ -132,7 +132,7 @@ python3 misi_kanan.py --target 2
 
 Misinya ngurus arming dan takeoff sendiri, jadi di console MAVProxy nggak perlu ngetik apa-apa.
 
-Pesan dari drone tetap muncul di terminal, dan juga disimpan ke `log/drone_YYYYmmdd_HHMMSS.log`. Folder `log/` dibuat sendiri waktu misi jalan, dan tiap kali jalan dapat file baru.
+Pesan dari drone tetap muncul di terminal, dan juga disimpan ke `log/drone-YYYY-MM-DD-HH-MM-SS.log`. Folder `log/` dibuat sendiri waktu misi jalan, dan tiap kali jalan dapat file baru.
 
 ### Ngulang misi
 

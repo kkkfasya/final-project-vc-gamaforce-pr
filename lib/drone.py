@@ -107,7 +107,7 @@ class Drone(Node):
 
     def _buat_logger(self):
         LOG_DIR.mkdir(parents=True, exist_ok=True)
-        self.log_path = LOG_DIR / ('drone_' + datetime.now().strftime('%Y%m%d_%H%M%S') + '.log')
+        self.log_path = LOG_DIR / ('drone-' + datetime.now().strftime('%Y-%m-%d-%H-%M-%S') + '.log')
 
         log = logging.Logger('drone_oprec')
         log.setLevel(logging.INFO)
